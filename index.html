@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="title">
+            <h1 id="season">Comment ça s'appelle ?</h1>
+            <button onclick="changeAnimal()" id="change-season">
+                <img src="assets/Refresh_icon.svg.png">
+            </button>
+        </div>
+        <div class="container">
+            <div id="box">
+
+            </div>
+            <div>
+                <div class="buttonDown">
+                    <button onclick="reply()" id="reply" class="replyAv">
+                        <h2 id="replyH2">Répondre</h2>
+                        <img id="reply-img" src="assets/micro_icon.png">
+                    </button>
+                    <button onclick="showRule()" id="helpBtn"><h2>?</h2></button>
+                </div> 
+            </div>
+        </div>
+        <div id="helpDiv">
+            <h3>Pour être sur que ta réponse soit bien prise en compte, il faut dire le nom de l'animal directement ou alors avec le pronom "un" ou "une" juste avant</h3> 
+            <button onclick="understandRule()" id="understandRule"><h2>J'ai compris !</h2></button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+
+</html>

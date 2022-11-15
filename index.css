@@ -1,0 +1,134 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/*-------------------------TITLE PART---------------------------------------*/
+
+.title{
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: #555753;
+}
+
+.title > button{
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+}
+
+.title > button > img{
+    width: 100%;
+}
+
+/*-------------------------CONTAINER PART---------------------------------*/
+
+.container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-------------------------BOX PART---------------------------------------*/
+
+#box{
+    height: 400px;
+    width: 400px;
+    border: solid 10px #258ed9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#box > img{
+    width: 50%;
+}
+
+/*-------------------------buttonDown PART---------------------------------------*/
+
+.buttonDown{
+    display: flex;
+}
+
+/*-------------------------REPLY PART---------------------------------------*/
+
+.replyAv, #understandRule{
+    background-color: #32a852;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 2px  20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.replyAv:hover, #understandRule:hover{
+    color: #32a852;
+    border: #32a852 solid 3px;
+    background:#fff;
+}
+
+#reply-img{
+    height: 40px;
+}
+
+.replyEc {
+    background-color: #fc4141;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 2px  20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.replyEc:hover{
+    color: #fc4141;
+    border: #fc4141 solid 3px;
+    background:#fff;
+}
+
+/*-------------------------HELP PART---------------------------------------*/
+
+#helpDiv{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 500px;
+    background: rgb(227, 232, 240);
+    top: 50%;
+    left: 50%;
+    border: 5px solid lightsteelblue;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#helpDiv > button{
+    width: 50%;
+}
+
+#helpBtn{
+    border: 2px solid grey;
+    background: transparent;
+    width: 60px;
+    border-radius: 100%;
+    padding: 0%;
+    margin: 0%;
+}
