@@ -1,25 +1,25 @@
-const animal = [
-    {id: 0, pronoun:"un", name:"Canard"},
-    {id: 1, pronoun:"un", name:"Chat"},
-    {id: 2, pronoun:"un", name:"Chien"},
-    {id: 3, pronoun:"un", name:"Cochon"},
-    {id: 4, pronoun:"un", name:"Coq"},
-    {id: 5, pronoun:"un", name:"Éléphant"},
-    {id: 6, pronoun:"un", name:"Hamster"},
-    {id: 7, pronoun:"un", name:"Kiwii"},
-    {id: 8, pronoun:"un", name:"Lapin"},
-    {id: 9, pronoun:"un", name:"Ours polaire"},
-    {id: 10, pronoun:"un", name:"Ours"},
-    {id: 11, pronoun:"un", name:"Panda roux"},
-    {id: 12, pronoun:"un", name:"Panda"},
-    {id: 13, pronoun:"un", name:"Paresseux"},
-    {id: 14, pronoun:"un", name:"Pingouin"},
-    {id: 15, pronoun:"un", name:"Poussin"},
-    {id: 16, pronoun:"un", name:"Raton laveur"},
-    {id: 17, pronoun:"un", name:"Renard"},
-    {id: 18, pronoun:"un", name:"Singe"},
-    {id: 19, pronoun:"une", name:"Souris"},
-    {id: 20, pronoun:"un", name:"Tigre"}
+const animal = [                                                                                                                //le champ pronounciation est obligatoire pour éviter un problème avec "Éléphant"
+    {id: 0, pronoun:"un", name:"Canard", pronunciation:"Canard"},
+    {id: 1, pronoun:"un", name:"Chat", pronunciation:"Chat"},
+    {id: 2, pronoun:"un", name:"Chien", pronunciation:"Chien"},
+    {id: 3, pronoun:"un", name:"Cochon", pronunciation:"Cochon"},
+    {id: 4, pronoun:"un", name:"Coq", pronunciation:"Coq"},
+    {id: 5, pronoun:"un", name:"Eléphant", pronunciation:"éléphant"},
+    {id: 6, pronoun:"un", name:"Hamster", pronunciation:"Hamster"},
+    {id: 7, pronoun:"un", name:"Kiwii", pronunciation:"Kiwii"},
+    {id: 8, pronoun:"un", name:"Lapin", pronunciation:"Lapin"},
+    {id: 9, pronoun:"un", name:"Ours polaire", pronunciation:"Ours polaire"},
+    {id: 10, pronoun:"un", name:"Ours", pronunciation:"Ours"},
+    {id: 11, pronoun:"un", name:"Panda roux", pronunciation:"Panda roux"},
+    {id: 12, pronoun:"un", name:"Panda", pronunciation:"Panda"},
+    {id: 13, pronoun:"un", name:"Paresseux", pronunciation:"Paresseux"},
+    {id: 14, pronoun:"un", name:"Pingouin", pronunciation:"Pingouin"},
+    {id: 15, pronoun:"un", name:"Poussin", pronunciation:"Poussin"},
+    {id: 16, pronoun:"un", name:"Raton laveur", pronunciation:"Raton laveur"},
+    {id: 17, pronoun:"un", name:"Renard", pronunciation:"Renard"},
+    {id: 18, pronoun:"un", name:"Singe", pronunciation:"Singe"},
+    {id: 19, pronoun:"une", name:"Souris", pronunciation:"Souris"},
+    {id: 20, pronoun:"un", name:"Tigre", pronunciation:"Tigre"}
 ]
 
 let recognitionStatus = 0
@@ -45,7 +45,7 @@ function changeAnimal(){                                                        
 
     elImg.src = "assets/animals/" + animal[randomInt].name + ".png"
 
-    divBox.dataset.animalName = animal[randomInt].name
+    divBox.dataset.animalName = animal[randomInt].pronunciation
     divBox.dataset.animalPronoun = animal[randomInt].pronoun
     divBox.appendChild(elImg)
 
@@ -78,9 +78,6 @@ function checkResponse(event){
 
     let ssu = new SpeechSynthesisUtterance()                                                                    //crée un objet de type SpeechSynthesisUtterance
     ssu.lang = "fr-FR"                                                                                          //renseigne la langue de la synthèse sur français
-
-    console.log(divBox.dataset.animalName)
-    console.log(event.results[0][0].transcript )
 
     if(divBox.dataset.animalName.toLowerCase() == phrase){                                                   //vérifie si la réponse donnée est la bonne
         ssu.text = "Bravo, c'était bien" + divBox.dataset.animalPronoun + divBox.dataset.animalName               //déclare le texte
