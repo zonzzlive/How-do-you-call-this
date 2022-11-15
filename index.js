@@ -4,7 +4,7 @@ const animal = [
     {id: 2, pronoun:"un", name:"Chien"},
     {id: 3, pronoun:"un", name:"Cochon"},
     {id: 4, pronoun:"un", name:"Coq"},
-    {id: 5, pronoun:"un", name:"Eléphant"},
+    {id: 5, pronoun:"un", name:"Éléphant"},
     {id: 6, pronoun:"un", name:"Hamster"},
     {id: 7, pronoun:"un", name:"Kiwii"},
     {id: 8, pronoun:"un", name:"Lapin"},
@@ -79,9 +79,13 @@ function checkResponse(event){
     let ssu = new SpeechSynthesisUtterance()                                                                    //crée un objet de type SpeechSynthesisUtterance
     ssu.lang = "fr-FR"                                                                                          //renseigne la langue de la synthèse sur français
 
+    console.log(divBox.dataset.animalName)
+    console.log(event.results[0][0].transcript )
+
     if(divBox.dataset.animalName.toLowerCase() == phrase){                                                   //vérifie si la réponse donnée est la bonne
-        ssu.text = "Bravo, c'est bien" + divBox.dataset.animalPronoun + divBox.dataset.animalName               //déclare le texte
+        ssu.text = "Bravo, c'était bien" + divBox.dataset.animalPronoun + divBox.dataset.animalName               //déclare le texte
         window.speechSynthesis.speak(ssu)                                                                       //dit le texte
+        changeAnimal()
     } else {                                                                                                 //sinon
         ssu.text = "Ce n'est pas " + event.results[0][0].transcript                                             //déclare le texte
         window.speechSynthesis.speak(ssu)                                                                       //dit le texte
@@ -119,6 +123,11 @@ function understandRule(){
 
 function showRule(){
     helpDiv.style.visibility = "visible"
+    let ssu = new SpeechSynthesisUtterance()                                                                    
+    ssu.lang = "fr-FR"                                                                                          
+    ssu.text = "Pour être sur que ta réponse soit bien prise en compte, il faut dire le nom de l'animal directement ou alors avec le pronom un ou une juste avant" 
+    window.speechSynthesis.speak(ssu)                                                                           
+
 }
 
 /*---------------------------------------DEFAULT INITIALISATION----------------------------------------------------*/
