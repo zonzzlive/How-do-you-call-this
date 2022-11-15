@@ -6,7 +6,7 @@ const animal = [                                                                
     {id: 4, pronoun:"un", name:"Coq", pronunciation:"Coq"},
     {id: 5, pronoun:"un", name:"Eléphant", pronunciation:"éléphant"},
     {id: 6, pronoun:"un", name:"Hamster", pronunciation:"Hamster"},
-    {id: 7, pronoun:"un", name:"Kiwii", pronunciation:"Kiwii"},
+    {id: 7, pronoun:"un", name:"Kiwii", pronunciation:"Kiwi"},
     {id: 8, pronoun:"un", name:"Lapin", pronunciation:"Lapin"},
     {id: 9, pronoun:"un", name:"Ours polaire", pronunciation:"Ours polaire"},
     {id: 10, pronoun:"un", name:"Ours", pronunciation:"Ours"},
@@ -49,6 +49,8 @@ function changeAnimal(){                                                        
     divBox.dataset.animalPronoun = animal[randomInt].pronoun
     divBox.appendChild(elImg)
 
+    console.log(animal[randomInt].pronoun + animal[randomInt].pronunciation)
+
 }
 
 
@@ -80,7 +82,7 @@ function checkResponse(event){
     ssu.lang = "fr-FR"                                                                                          //renseigne la langue de la synthèse sur français
 
     if(divBox.dataset.animalName.toLowerCase() == phrase){                                                   //vérifie si la réponse donnée est la bonne
-        ssu.text = "Bravo, c'était bien" + divBox.dataset.animalPronoun + divBox.dataset.animalName               //déclare le texte
+        ssu.text = "Bravo, c'était bien " + divBox.dataset.animalPronoun + " " + divBox.dataset.animalName               //déclare le texte
         window.speechSynthesis.speak(ssu)                                                                       //dit le texte
         changeAnimal()
     } else {                                                                                                 //sinon
