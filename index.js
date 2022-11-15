@@ -48,9 +48,7 @@ function changeAnimal(){                                                        
     divBox.dataset.animalName = animal[randomInt].pronunciation
     divBox.dataset.animalPronoun = animal[randomInt].pronoun
     divBox.appendChild(elImg)
-
-    console.log(animal[randomInt].pronoun + animal[randomInt].pronunciation)
-
+    
 }
 
 
